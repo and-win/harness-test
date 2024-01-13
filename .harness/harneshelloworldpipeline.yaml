@@ -1,0 +1,30 @@
+pipeline:
+  name: harnes-hello-world-pipeline
+  identifier: harneshelloworldpipeline
+  projectIdentifier: default_project
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: first-build-step
+        identifier: firstbuildstep
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: false
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Docker
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Run_1
+                  identifier: Run_1
+                  spec:
+                    shell: Sh
+                    command: echo "Hello From Harness"
+                  description: just a hello world test
